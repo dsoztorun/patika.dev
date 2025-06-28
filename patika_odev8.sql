@@ -79,14 +79,14 @@ WHERE name = 'Theodoric' RETURNING *;
 
 -- 4. Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
 
-DELETE FROM employee WHERE email LIKE '%.au%'; -- 2 satır silindi
+DELETE FROM employee WHERE email LIKE '%.au%' RETURNING *; -- 2 satır silindi
 
-DELETE FROM employee WHERE email LIKE '%.gov%'; -- 2 satır silindi
+DELETE FROM employee WHERE email LIKE '%.gov%' RETURNING *; -- 2 satır silindi
 
 DELETE FROM employee 
-WHERE name LIKE '%Born before WW1%' OR name LIKE '%Student%'; -- 5 satır silindi
+WHERE name LIKE '%Born before WW1%' OR name LIKE '%Student%' RETURNING *; -- 5 satır silindi
 
-DELETE FROM employee WHERE birthdate > '2005-06-01'; -- 1 satır silindi
+DELETE FROM employee WHERE birthdate > '2005-06-01' RETURNING *; -- 1 satır silindi
 
-DELETE FROM employee WHERE id < 3; -- 2 satır silindi
+DELETE FROM employee WHERE id < 3 RETURNING *; -- 2 satır silindi
 
